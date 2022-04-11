@@ -1,25 +1,35 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+
+const links = ["Services", "Projects", " About"];
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="navbar">
+      <Logo></Logo>
+      <div className="link_box">
+        {links.map((ele) => {
+          return <Link link={ele} />
+        })}
+      </div>
+      <Btn></Btn>
     </div>
   );
+}
+
+function Logo() {
+  return <div>
+    <h3>LGOBAKERY</h3>
+  </div>;
+}
+
+function Link({ link }) {
+ return <spam>{link}</spam>;
+}
+
+function Btn() {
+  return <div>
+    <button>Connect</button>
+  </div>;
 }
 
 export default App;
